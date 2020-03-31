@@ -1,41 +1,40 @@
-# the-module [![Travis CI Build Status](https://img.shields.io/travis/com/Richienb/the-module/master.svg?style=for-the-badge)](https://travis-ci.com/Richienb/the-module)
+# get-generator [![Travis CI Build Status](https://img.shields.io/travis/com/Richienb/get-generator/master.svg?style=for-the-badge)](https://travis-ci.com/Richienb/get-generator)
 
-My awesome module.
+Get the value of a generator function.
 
-[![NPM Badge](https://nodei.co/npm/the-module.png)](https://npmjs.com/package/the-module)
+[![NPM Badge](https://nodei.co/npm/get-generator.png)](https://npmjs.com/package/get-generator)
 
 ## Install
 
 ```sh
-npm install the-module
+npm install get-generator
 ```
 
 ## Usage
 
 ```js
-const theModule = require("the-module");
+const getGenerator = require("get-generator");
 
-theModule("unicorns");
-//=> 'unicorns & rainbows'
+function* generator() {
+	yield 1;
+	yield 2;
+	yield 3;
+}
+
+getGenerator(generator());
+//=> [1, 2, 3]
+
+getGenerator(generator(), 2);
+//=> [1, 2]
 ```
 
 ## API
 
-### theModule(input, options?)
+### getGenerator(generator)
+### getGenerator.async(generator)
 
-#### input
+#### generator
 
-Type: `string`
+Type: `generator` or `async generator`
 
-Lorem ipsum.
-
-#### options
-
-Type: `object`
-
-##### postfix
-
-Type: `string`\
-Default: `rainbows`
-
-Lorem ipsum.
+The generator to get the value of. Asynchronous generators are only supported by `getGenerator.async` which returns a promise.

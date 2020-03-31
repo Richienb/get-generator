@@ -1,13 +1,20 @@
 const test = require("ava")
-const theModule = require(".")
+const getGenerator = require(".")
 
-test("main", t => {
-	t.throws(() => {
-		theModule(123)
-	}, {
-		instanceOf: TypeError,
-		message: "Expected a string, got number"
-	})
+function * generator() {
+	yield 1
+	yield 2
+	yield 3
+}
 
-	t.is(theModule("unicorns"), "unicorns & rainbows")
+async function * asyncGenerator() {
+	yield 1
+	yield 2
+	yield 3
+}
+
+test("main", async t => {
+	t.deepEqual(getGenerator(generator()), [1, 2, 3])
+
+	t.deepEqual(await getGenerator.async(asyncGenerator()), [1, 2, 3])
 })

@@ -1,8 +1,8 @@
 {
-	"name": "the-module",
+	"name": "get-generator",
 	"version": "0.0.0",
-	"description": "My awesome module.",
-	"repository": "https://github.com/Richienb/the-module.git",
+	"description": "Get the value of a generator function.",
+	"repository": "https://github.com/Richienb/get-generator.git",
 	"author": "Richie Bendall <richiebendall@gmail.com>",
 	"license": "MIT",
 	"main": "index.js",
@@ -17,8 +17,16 @@
 		"lint": "xo",
 		"test": "yarn lint && ava"
 	},
-	"keywords": [],
-	"dependencies": {},
+	"keywords": [
+		"generator",
+		"value",
+		"function",
+		"async",
+		"get"
+	],
+	"dependencies": {
+		"@sindresorhus/is": "^2.1.0"
+	},
 	"devDependencies": {
 		"ava": "^3.5.1",
 		"eslint-config-richienb": "^0.4.2",

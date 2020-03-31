@@ -1,6 +1,6 @@
 {
 	"name": "get-generator",
-	"version": "0.0.0",
+	"version": "1.0.0",
 	"description": "Get the value of a generator function.",
 	"repository": "https://github.com/Richienb/get-generator.git",
 	"author": "Richie Bendall <richiebendall@gmail.com>",
